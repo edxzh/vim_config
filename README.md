@@ -5,3 +5,5 @@
 <p>Solarized Dark.xcs is one color schemes for xshell which is a ssh software in windows. start xshell then click color schemes, import it </p>
 
 <p>Deja Vu Sans Mono.ttf is a windows font, just double click when you are on windows</p>
+
+<p>Solarized Dark.itermcolors is for iterms on MacOS</p>
