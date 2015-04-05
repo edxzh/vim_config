@@ -1,6 +1,6 @@
 syntax enable                      " 语法高亮
 set background=dark
-colorscheme solarized
+colorscheme desert
 set tabstop=2
 set shiftwidth=2
 set laststatus=2
@@ -15,6 +15,12 @@ set sw=2
 set ts=2
 set expandtab
 set number                     " 行号
+" 搜索时忽略大小写，但在有一个或以上大写字母时仍大小写敏感
+set ignorecase
+" 关闭错误声音
+set noerrorbells
+"显示括号配对情况
+set showmatch
 
 " 当有多余的空格时显示.号
 set list
@@ -34,7 +40,7 @@ vnoremap > >gv
 map <F2> :%s/\s*$//g<cr>:noh<cr>
 map <F7> :NERDTreeToggle<CR>
 
-set cursorline "高亮光标所在行
+"set cursorline "高亮光标所在行
 "let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
 
 "set list "把制表符显示为^I,用$标示行尾（使用list分辨尾部的字符是tab还是空格）
@@ -51,7 +57,17 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
+"{{{ tpope/vim-fugitive Git命令集合
 Bundle 'tpope/vim-fugitive'
+if executable('git')
+  nnoremap <silent> <leader>gs :Gstatus<CR>
+  nnoremap <silent> <leader>gd :Gdiff<CR>
+  nnoremap <silent> <leader>gc :Gcommit<CR>
+  nnoremap <silent> <leader>gb :Gblame<CR>
+  nnoremap <silent> <leader>gl :Glog<CR>
+  nnoremap <silent> <leader>gp :Git push<CR>
+  endif
+  "}}}
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
@@ -62,6 +78,54 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'ervandew/supertab'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'airblade/vim-gitgutter'
+
+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+let g:Powerline_symbols = 'fancy'
+let Powerline_symbols = 'compatible'
+
+Bundle 'othree/html5.vim'
+Bundle 'nono/jquery.vim'
+Bundle 'pangloss/vim-javascript'
+Bundle 'python.vim--Vasiliev'
+Bundle 'xml.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'asins/vim-css'
+Bundle 'majutsushi/tagbar'
+Bundle 'grep.vim'
+nnoremap <silent> <C-f> :Grep<CR>
+
+" {{{ asins/template.vim 文件模板
+Bundle 'asins/template.vim'
+let g:template_author = "Asins"
+" }}}
+
+Bundle 'AutoComplPop'
+
+" 复制选中文本到系统剪贴板
+vnoremap <leader>yo "*y
+" 从系统剪贴板粘贴内容
+nnoremap <leader>po "*p
+" 选中模式 Ctrl+c 复制选中的文本
+vnoremap <c-c> "+y
+" 普通模式下 Ctrl+c 复制文件路径
+nnoremap <c-c> :let @+ = expand('%:p')<cr>
+
+" 删除所有行未尾空格
+nnoremap <silent> <f12> :%s/[ \t\r]\+$//g<cr>
+
+" Javascript {{{
+autocmd BufRead,BufNewFile jquery.*.js setlocal ft=javascript syntax=jquery
+autocmd BufRead,BufNewFile *.tpl setlocal ft=tpl syntax=html
+" JSON syntax
+autocmd BufRead,BufNewFile *.json setlocal ft=json
+" }}}
+" Markdown {{{
+autocmd FileType markdown setlocal shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead *.mk setlocal filetype=markdown
+" }}}
+
+" Ruby 文件的一般设置，比如不要 tab 等
+autocmd FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 expandtab
 
 filetype plugin indent on     " required!
 "
