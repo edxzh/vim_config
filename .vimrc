@@ -100,6 +100,7 @@ let g:template_author = "Asins"
 " }}}
 
 Bundle 'AutoComplPop'
+Bundle 'mhinz/vim-startify'
 
 " 复制选中文本到系统剪贴板
 vnoremap <leader>yo "*y
