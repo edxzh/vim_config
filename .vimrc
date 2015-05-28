@@ -1,6 +1,6 @@
 syntax enable                      " 语法高亮
 set background=dark
-colorscheme desert
+colorscheme solarized
 set tabstop=2
 set shiftwidth=2
 set laststatus=2
@@ -73,9 +73,6 @@ Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'groenewege/vim-less'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'ervandew/supertab'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'airblade/vim-gitgutter'
 
@@ -83,15 +80,14 @@ Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 let g:Powerline_symbols = 'fancy'
 let Powerline_symbols = 'compatible'
 
-Bundle 'othree/html5.vim'
-Bundle 'nono/jquery.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'python.vim--Vasiliev'
 Bundle 'xml.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'asins/vim-css'
 Bundle 'majutsushi/tagbar'
 Bundle 'grep.vim'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'tpope/vim-surround'
 nnoremap <silent> <C-f> :Grep<CR>
 
 " {{{ asins/template.vim 文件模板
@@ -100,7 +96,13 @@ let g:template_author = "Asins"
 " }}}
 
 Bundle 'AutoComplPop'
-Bundle 'mhinz/vim-startify'
+Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+" install ctags first
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'elzr/vim-json'
 
 " 复制选中文本到系统剪贴板
 vnoremap <leader>yo "*y
@@ -129,6 +131,9 @@ autocmd BufNewFile,BufRead *.mk setlocal filetype=markdown
 autocmd FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 expandtab
 
 filetype plugin indent on     " required!
+
+" 打开文件时自动打开 NERDTree
+autocmd vimenter * if !argc() | NERDTree | endif
 "
 " Brief help
 " :BundleList          - list configured bundles 
@@ -139,3 +144,9 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed.. 
 " set t_Co=256
+
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9,ruby-2.0'
+
+let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8'
