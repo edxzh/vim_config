@@ -1,4 +1,4 @@
-<p>vimrc is my vim config file, there are some common and useful plugins in it, such as zencoding, rails and so on. It is useful for ruby on rails developer</p>
+<p>vimrc is my vim config file, there are some common and useful plugins in it. It is very useful for ruby on rails developer</p>
 
 <p>solarized.vim is one color schemes for vim. put it in ~/.vim/colors. then execute <code>:source</code> in a new vim</p>
 
