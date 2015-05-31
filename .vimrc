@@ -103,6 +103,7 @@ Bundle 'honza/vim-snippets'
 " install ctags first
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'elzr/vim-json'
+Bundle 'kchmck/vim-coffee-script'
 
 " 复制选中文本到系统剪贴板
 vnoremap <leader>yo "*y
