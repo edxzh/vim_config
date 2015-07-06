@@ -92,6 +92,7 @@ nnoremap <silent> <C-f> :Grep<CR>
 
 " {{{ asins/template.vim 文件模板
 Bundle 'asins/template.vim'
+Bundle 'vim-multiple-cursors'
 let g:template_author = "Asins"
 " }}}
 
