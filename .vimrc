@@ -155,3 +155,6 @@ let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8'
 
 let g:mapleader = ","
 map <Leader>d orequire 'byebug'; byebug<esc>
+
+map <Leader>, :NERDTreeToggle<cr>
+map <Leader>/  <plug>NERDCommenterToggle<cr>
