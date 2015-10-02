@@ -152,3 +152,6 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9,ruby-2.0'
 
 let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8'
+
+let g:mapleader = ","
+map <Leader>d orequire 'byebug'; byebug<esc>
