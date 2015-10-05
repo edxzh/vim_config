@@ -156,12 +156,10 @@ map <leader>T :!ctags -R .<cr>
 
 " Copy the file path to buffer
 map <silent> <Leader>c :let @+ = expand("%")<cr>
-" copy visual selection to clipboard
+" visual mode Ctrl+c copy visual text
 vnoremap <leader>yo "*y
 " paste from clipboard
 nnoremap <leader>po "*p
-" visual mode Ctrl+c copy visual text
-vnoremap <c-c> "+y
 "window movement/operations
 map <leader>+ <c-w>+
 map <leader>- <c-w>-
