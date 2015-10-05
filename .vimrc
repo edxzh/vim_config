@@ -168,7 +168,7 @@ endif
 "}}}
 
 " move line up and down
-nnoremap <C-s-k>   :<C-u>silent! move-2<CR>==
-nnoremap <C-s-j> :<C-u>silent! move+<CR>==
-xnoremap <C-s-k>   :<C-u>silent! '<,'>move-2<CR>gv=gv
-xnoremap <C-s-j> :<C-u>silent! '<,'>move'>+<CR>gv=gv
+nnoremap <S-Up>   :<C-u>silent! move-2<CR>==
+nnoremap <S-Down> :<C-u>silent! move+<CR>==
+xnoremap <S-Up>   :<C-u>silent! '<,'>move-2<CR>gv=gv
+xnoremap <S-Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
