@@ -83,7 +83,6 @@ Bundle 'vim-multiple-cursors'
 let g:template_author = "Asins"
 " }}}
 
-Bundle 'AutoComplPop'
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
