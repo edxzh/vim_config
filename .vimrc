@@ -75,6 +75,7 @@ Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'vim-scripts/grep.vim'
 
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 let g:Powerline_symbols = 'fancy'
@@ -156,5 +157,18 @@ let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8'
 let g:mapleader = ","
 map <Leader>d orequire 'byebug'; byebug<esc>
 
-map <Leader>, :NERDTreeToggle<cr>
+map <Leader>N :NERDTreeToggle<cr>
+"Reveal file in NerdTree
+map <Leader>R :NERDTreeFind<cr>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
+
+"Grep.vim
+map <Leader>f :Grep<cr>
+
+"Format JSON - filter the file through Python to format it
+map <Leader>j :%!python -m json.tool<cr>
+
+"Show ctags - TagList plugin
+map <leader>t :TlistToggle<cr>
+"Build ctags (requires exuberant-ctags)
+map <leader>T :!ctags -R .<cr>
