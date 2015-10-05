@@ -49,12 +49,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" " required! 
 Bundle 'gmarik/vundle'
-
-" My Bundles here:
-"
-" original repos on github
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -95,13 +90,6 @@ Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'elzr/vim-json'
 Bundle 'kchmck/vim-coffee-script'
-
-" 复制选中文本到系统剪贴板
-vnoremap <leader>yo "*y
-" 从系统剪贴板粘贴内容
-nnoremap <leader>po "*p
-" 选中模式 Ctrl+c 复制选中的文本
-vnoremap <c-c> "+y
 
 " 删除所有行未尾空格
 nnoremap <silent> <f12> :%s/[ \t\r]\+$//g<cr>
