@@ -38,10 +38,8 @@ vnoremap > >gv
 
 "移除行尾空格
 map <F2> :%s/\s*$//g<cr>:noh<cr>
-map <F7> :NERDTreeToggle<CR>
 
-"set cursorline "高亮光标所在行
-"let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
+let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
 
 "set list "把制表符显示为^I,用$标示行尾（使用list分辨尾部的字符是tab还是空格）
 
@@ -69,6 +67,7 @@ if executable('git')
   endif
   "}}}
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'tpope/vim-rails'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/emmet-vim'
@@ -87,9 +86,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'asins/vim-css'
 Bundle 'majutsushi/tagbar'
 Bundle 'grep.vim'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'tpope/vim-surround'
-nnoremap <silent> <C-f> :Grep<CR>
 
 " {{{ asins/template.vim 文件模板
 Bundle 'asins/template.vim'
@@ -113,8 +110,6 @@ vnoremap <leader>yo "*y
 nnoremap <leader>po "*p
 " 选中模式 Ctrl+c 复制选中的文本
 vnoremap <c-c> "+y
-" 普通模式下 Ctrl+c 复制文件路径
-nnoremap <c-c> :let @+ = expand('%:p')<cr>
 
 " 删除所有行未尾空格
 nnoremap <silent> <f12> :%s/[ \t\r]\+$//g<cr>
@@ -152,8 +147,6 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9,ruby-2.0'
 
-let Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8'
-
 let g:mapleader = ","
 map <Leader>d orequire 'byebug'; byebug<esc>
 
@@ -161,14 +154,25 @@ map <Leader>N :NERDTreeToggle<cr>
 "Reveal file in NerdTree
 map <Leader>R :NERDTreeFind<cr>
 map <Leader>/  <plug>NERDCommenterToggle<cr>
-
 "Grep.vim
 map <Leader>f :Grep<cr>
-
 "Format JSON - filter the file through Python to format it
 map <Leader>j :%!python -m json.tool<cr>
-
 "Show ctags - TagList plugin
 map <leader>t :TlistToggle<cr>
 "Build ctags (requires exuberant-ctags)
 map <leader>T :!ctags -R .<cr>
+
+" Copy the file path to buffer
+map <silent> <Leader>c :let @+ = expand("%")<cr>
+" copy visual selection to clipboard
+vnoremap <leader>yo "*y
+" paste from clipboard
+nnoremap <leader>po "*p
+" visual mode Ctrl+c copy visual text
+vnoremap <c-c> "+y
+"window movement/operations
+map <leader>+ <c-w>+
+map <leader>- <c-w>-
+map <leader>= <c-w>=
+map <leader>_ <c-w>_
