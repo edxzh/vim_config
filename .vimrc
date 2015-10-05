@@ -166,3 +166,9 @@ if executable('git')
   nnoremap <silent> <leader>gp :Git push<CR>
 endif
 "}}}
+
+" move line up and down
+nnoremap <C-s-k>   :<C-u>silent! move-2<CR>==
+nnoremap <C-s-j> :<C-u>silent! move+<CR>==
+xnoremap <C-s-k>   :<C-u>silent! '<,'>move-2<CR>gv=gv
+xnoremap <C-s-j> :<C-u>silent! '<,'>move'>+<CR>gv=gv
