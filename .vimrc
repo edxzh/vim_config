@@ -55,17 +55,8 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-"{{{ tpope/vim-fugitive Git命令集合
+
 Bundle 'tpope/vim-fugitive'
-if executable('git')
-  nnoremap <silent> <leader>gs :Gstatus<CR>
-  nnoremap <silent> <leader>gd :Gdiff<CR>
-  nnoremap <silent> <leader>gc :Gcommit<CR>
-  nnoremap <silent> <leader>gb :Gblame<CR>
-  nnoremap <silent> <leader>gl :Glog<CR>
-  nnoremap <silent> <leader>gp :Git push<CR>
-  endif
-  "}}}
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'tpope/vim-rails'
@@ -176,3 +167,14 @@ map <leader>+ <c-w>+
 map <leader>- <c-w>-
 map <leader>= <c-w>=
 map <leader>_ <c-w>_
+
+"{{{ tpope/vim-fugitive Git命令集合
+if executable('git')
+  nnoremap <silent> <leader>gs :Gstatus<CR>
+  nnoremap <silent> <leader>gd :Gdiff<CR>
+  nnoremap <silent> <leader>gc :Gcommit<CR>
+  nnoremap <silent> <leader>gb :Gblame<CR>
+  nnoremap <silent> <leader>gl :Glog<CR>
+  nnoremap <silent> <leader>gp :Git push<CR>
+endif
+"}}}
