@@ -29,11 +29,6 @@ set listchars=tab:,.,trail:.,extends:#,nbsp:.
 " inserted indentation, line breaks and start of insert)
 set backspace=indent,eol,start
 
-"set guifont=Menlo:h16
-"set rtp+={path_to_powerline}/powerline/bindings/vim
-"set laststatus=2
-"set noshowmode
-
 nnoremap < v<
 nnoremap > v>
 vnoremap < <gv
