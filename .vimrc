@@ -124,6 +124,10 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9,ruby-2.0'
 
 let g:mapleader = ","
+
+" grep.vim settings
+let Grep_Default_Options = '-ir'
+
 map <Leader>d orequire 'byebug'; byebug<esc>
 
 map <Leader>N :NERDTreeToggle<cr>
