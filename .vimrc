@@ -25,8 +25,6 @@ set showmatch
 " 当有多余的空格时显示.号
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
-" allow backspacing over everything in insert mode (including automatically
-" inserted indentation, line breaks and start of insert)
 set backspace=indent,eol,start
 
 nnoremap < v<
