@@ -70,7 +70,6 @@ autocmd BufRead,BufNewFile *.tpl setlocal ft=tpl syntax=html
 autocmd BufRead,BufNewFile *.json setlocal ft=json
 autocmd FileType markdown setlocal shiftwidth=4 expandtab
 autocmd BufNewFile,BufRead *.mk setlocal filetype=markdown
-
 " Ruby 文件的一般设置，比如不要 tab 等
 autocmd FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 expandtab
 " 打开文件时自动打开 NERDTree
