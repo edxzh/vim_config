@@ -158,3 +158,13 @@ nnoremap <S-Up>   :<C-u>silent! move-2<CR>==
 nnoremap <S-Down> :<C-u>silent! move+<CR>==
 xnoremap <S-Up>   :<C-u>silent! '<,'>move-2<CR>gv=gv
 xnoremap <S-Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
+
+if has("gui_running")
+  set guioptions=aAce
+  set showtabline=2
+  set guifont=Monaco:h13
+  "set guifont=Menlo:h16
+  "set rtp+={path_to_powerline}/powerline/bindings/vim
+  "set laststatus=2
+  "set noshowmode
+endif
