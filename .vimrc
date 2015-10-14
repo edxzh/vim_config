@@ -4,8 +4,6 @@ colorscheme solarized
 set tabstop=2
 set shiftwidth=2
 set laststatus=2
-"set dictionary+=$HOME/.mydict
-"set dictionary+=/usr/share/dict/words
 set isk+=- "把-分割的单词视为一个整体
 set mouse=nv
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936
@@ -21,37 +19,18 @@ set ignorecase
 set noerrorbells
 "显示括号配对情况
 set showmatch
-
 " 当有多余的空格时显示.号
 set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
 " allow backspacing over everything in insert mode (including automatically
 " inserted indentation, line breaks and start of insert)
 set backspace=indent,eol,start
-
-"set guifont=Menlo:h16
-"set rtp+={path_to_powerline}/powerline/bindings/vim
-"set laststatus=2
-"set noshowmode
-
-nnoremap < v<
-nnoremap > v>
-vnoremap < <gv
-vnoremap > >gv
-
-"移除行尾空格
-map <F2> :%s/\s*$//g<cr>:noh<cr>
-
-let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
-
-"set list "把制表符显示为^I,用$标示行尾（使用list分辨尾部的字符是tab还是空格）
-
 set nocompatible               " be iMproved
-filetype off                   " required!
+set t_Co=256
 set rtp+=~/.vim/bundle/vundle/
+
 call vundle#rc()
 
-" let Vundle manage Vundle
 Bundle 'gmarik/vundle'
 
 Bundle 'L9'
@@ -69,22 +48,13 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'vim-scripts/grep.vim'
 
 Bundle 'git://github.com/Lokaltog/vim-powerline.git'
-let g:Powerline_symbols = 'fancy'
-let Powerline_symbols = 'compatible'
-
 Bundle 'pangloss/vim-javascript'
 Bundle 'xml.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'asins/vim-css'
 Bundle 'grep.vim'
 Bundle 'tpope/vim-surround'
-
-" {{{ asins/template.vim 文件模板
-Bundle 'asins/template.vim'
 Bundle 'vim-multiple-cursors'
-let g:template_author = "Asins"
-" }}}
-
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
@@ -94,43 +64,32 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'elzr/vim-json'
 Bundle 'kchmck/vim-coffee-script'
 
-" 删除所有行未尾空格
-nnoremap <silent> <f12> :%s/[ \t\r]\+$//g<cr>
+filetype off                   " required!
+filetype plugin indent on     " required!
 
-" Javascript {{{
 autocmd BufRead,BufNewFile jquery.*.js setlocal ft=javascript syntax=jquery
 autocmd BufRead,BufNewFile *.tpl setlocal ft=tpl syntax=html
-" JSON syntax
 autocmd BufRead,BufNewFile *.json setlocal ft=json
-" }}}
-" Markdown {{{
 autocmd FileType markdown setlocal shiftwidth=4 expandtab
 autocmd BufNewFile,BufRead *.mk setlocal filetype=markdown
-" }}}
 
 " Ruby 文件的一般设置，比如不要 tab 等
 autocmd FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 expandtab
-
-filetype plugin indent on     " required!
-
 " 打开文件时自动打开 NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
-"
-" Brief help
-" :BundleList          - list configured bundles 
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed.. 
-" set t_Co=256
+
+let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
+let g:Powerline_symbols = 'fancy'
+let Powerline_symbols = 'compatible'
+" grep.vim settings
+let Grep_Default_Options = '-ir'
 
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9,ruby-2.0'
 
 let g:mapleader = ","
+
 map <Leader>d orequire 'byebug'; byebug<esc>
 
 map <Leader>N :NERDTreeToggle<cr>
@@ -171,6 +130,11 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
+
+nnoremap < v<
+nnoremap > v>
+vnoremap < <gv
+vnoremap > >gv
 
 "window movement/operations
 map <leader>+ <c-w>+
