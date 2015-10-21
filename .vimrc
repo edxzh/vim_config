@@ -61,6 +61,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'elzr/vim-json'
 Bundle 'kchmck/vim-coffee-script'
+bundle 'AutoComplPop'
 
 filetype off                   " required!
 filetype plugin indent on     " required!
@@ -167,3 +168,12 @@ if has("gui_running")
   "set laststatus=2
   "set noshowmode
 endif
+
+fun! GetSnipsInCurrentScope()
+  let snips = {}
+  for scope in [bufnr('%')] + split(&ft, '\.') + ['_']
+    call extend(snips, get(s:snippets, scope, {}), 'keep')
+    call extend(snips, get(s:multi_snips, scope, {}), 'keep')
+  endfor
+  return snips
+endf
