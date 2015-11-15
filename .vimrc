@@ -50,7 +50,6 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'xml.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'asins/vim-css'
-Bundle 'grep.vim'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-multiple-cursors'
 Bundle 'tomtom/tlib_vim'
@@ -61,7 +60,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'elzr/vim-json'
 Bundle 'kchmck/vim-coffee-script'
-bundle 'AutoComplPop'
+Bundle 'AutoComplPop'
 
 filetype off                   " required!
 filetype plugin indent on     " required!
