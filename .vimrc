@@ -62,6 +62,7 @@ Bundle 'elzr/vim-json'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'AutoComplPop'
 Bundle 'Raimondi/delimitMate'
+Bundle 'vim-ruby/vim-ruby'
 
 filetype off                   " required!
 filetype plugin indent on     " required!
