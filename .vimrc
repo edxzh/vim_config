@@ -33,6 +33,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'L9'
 Bundle 'tpope/vim-endwise'
+Bundle 'auto-pairs'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
