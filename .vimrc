@@ -172,6 +172,10 @@ if has("gui_running")
   "set noshowmode
 endif
 
+map <F2> :MRU<cr>
+let MRU_Max_Entries=1000
+let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*' 
+
 fun! GetSnipsInCurrentScope()
   let snips = {}
   for scope in [bufnr('%')] + split(&ft, '\.') + ['_']
