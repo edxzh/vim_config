@@ -162,6 +162,9 @@ nnoremap <S-Down> :<C-u>silent! move+<CR>==
 xnoremap <S-Up>   :<C-u>silent! '<,'>move-2<CR>gv=gv
 xnoremap <S-Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
 
+" search and replace
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+
 if has("gui_running")
   set guioptions=aAce
   set showtabline=2
