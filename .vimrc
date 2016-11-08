@@ -175,6 +175,10 @@ if has("gui_running")
   "set noshowmode
 endif
 
+" search and replace
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+
+" MRU
 map <F2> :MRU<cr>
 let MRU_Max_Entries=1000
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*' 
