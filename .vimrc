@@ -61,10 +61,15 @@ Plugin 'honza/vim-snippets'
 " install ctags first
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'elzr/vim-json'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'AutoComplPop'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'mru.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'lvjian700/vim-rake'
+
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'moll/vim-node'
 
 filetype off                   " required!
 filetype plugin indent on     " required!
