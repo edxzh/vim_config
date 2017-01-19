@@ -85,6 +85,7 @@ autocmd FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 expandtab
 autocmd vimenter * if !argc() | NERDTree | endif
 
 let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
+let g:template_author = "StarZhou"
 let g:Powerline_symbols = 'fancy'
 let Powerline_symbols = 'compatible'
 " grep.vim settings
@@ -92,7 +93,7 @@ let Grep_Default_Options = '-ir'
 
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9,ruby-2.0'
+let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
 
 let g:mapleader = ","
 
