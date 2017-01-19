@@ -1,6 +1,7 @@
 syntax enable                      " 语法高亮
 set background=dark
 colorscheme solarized
+
 set tabstop=2
 set shiftwidth=2
 set laststatus=2
@@ -24,6 +25,7 @@ set list
 set listchars=tab:,.,trail:.,extends:#,nbsp:.
 set backspace=indent,eol,start
 set nocompatible               " be iMproved
+set clipboard=unnamed
 set t_Co=256
 set rtp+=~/.vim/bundle/vundle/
 
@@ -51,9 +53,9 @@ Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 Plugin 'pangloss/vim-javascript'
 Plugin 'xml.vim'
 Plugin 'tpope/vim-markdown'
-Plugin 'asins/vim-css'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-multiple-cursors'
+" snippets plugin rely on this two libs
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'garbas/vim-snipmate'
@@ -61,12 +63,13 @@ Plugin 'honza/vim-snippets'
 " install ctags first
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'elzr/vim-json'
+Plugin 'asins/template.vim'
 Plugin 'AutoComplPop'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'mru.vim'
 Plugin 'rizzatti/dash.vim'
-Plugin 'lvjian700/vim-rake'
+Plugin 'tpope/vim-repeat'
 
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'moll/vim-node'
@@ -84,20 +87,29 @@ autocmd FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 expandtab
 " 打开文件时自动打开 NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 
+let g:mapleader = ","
+
 let Tlist_Use_Right_Window=1 "方法列表放在屏幕的右侧
 let g:template_author = "StarZhou"
 let g:Powerline_symbols = 'fancy'
 let Powerline_symbols = 'compatible'
-" grep.vim settings
-let Grep_Default_Options = '-ir'
 
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
 
-let g:mapleader = ","
-
+" grep.vim settings
 let Grep_Default_Options = '-ir'
+
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_user_command = {
+  \ 'types': {
+    \ 1: ['.git/', 'cd %s && git ls-files'],
+    \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
+    \ },
+  \ 'fallback': 'find %s -type f'
+\ }
 
 map <Leader>d orequire 'byebug'; byebug<esc>
 
