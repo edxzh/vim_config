@@ -55,11 +55,10 @@ Plugin 'xml.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-multiple-cursors'
-" snippets plugin rely on this two libs
-Plugin 'tomtom/tlib_vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
+
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+
 " install ctags first
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'elzr/vim-json'
