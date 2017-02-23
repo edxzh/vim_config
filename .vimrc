@@ -100,7 +100,6 @@ let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
 " grep.vim settings
 let Grep_Default_Options = '-ir'
 
-let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_user_command = {
   \ 'types': {
