@@ -13,6 +13,8 @@ set cindent
 set sw=2
 set ts=2
 set expandtab
+" turn off error bell
+set vb t_vb=
 set number                     " 行号
 " 搜索时忽略大小写，但在有一个或以上大写字母时仍大小写敏感
 set ignorecase
