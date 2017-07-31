@@ -29,11 +29,11 @@ set backspace=indent,eol,start
 set nocompatible               " be iMproved
 set clipboard=unnamed
 set t_Co=256
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#rc()
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'L9'
 Plugin 'tpope/vim-endwise'
@@ -75,6 +75,8 @@ Plugin 'tpope/vim-repeat'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'moll/vim-node'
 
+call vundle#end()
+
 filetype off                   " required!
 filetype plugin indent on     " required!
 
@@ -83,10 +85,10 @@ autocmd BufRead,BufNewFile *.tpl setlocal ft=tpl syntax=html
 autocmd BufRead,BufNewFile *.json setlocal ft=json
 autocmd FileType markdown setlocal shiftwidth=4 expandtab
 autocmd BufNewFile,BufRead *.mk setlocal filetype=markdown
-" Ruby 文件的一般设置，比如不要 tab 等
-autocmd FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 expandtab
 " 打开文件时自动打开 NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
+" Ruby 文件的一般设置，比如不要 tab 等
+autocmd FileType ruby,eruby setlocal tabstop=2 shiftwidth=2 expandtab
 
 let g:mapleader = ","
 
