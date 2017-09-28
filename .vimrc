@@ -33,7 +33,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 filetype off
 
-call vundle#rc()
+call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
@@ -78,7 +78,7 @@ Plugin 'slashmili/alchemist.vim'
 
 call vundle#end()
 
-filetype off                   " required!
+filetype on                   " required!
 filetype plugin indent on     " required!
 
 autocmd BufRead,BufNewFile jquery.*.js setlocal ft=javascript syntax=jquery
