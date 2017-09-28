@@ -31,12 +31,13 @@ set clipboard=unnamed
 set t_Co=256
 set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
+filetype off
+
+call vundle#rc()
 
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'L9'
-Plugin 'tpope/vim-endwise'
 Plugin 'auto-pairs'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
@@ -52,12 +53,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/grep.vim'
 
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
-Plugin 'pangloss/vim-javascript'
-Plugin 'xml.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-multiple-cursors'
-
+" snippets plugin rely on this two lib
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
@@ -72,8 +71,10 @@ Plugin 'mru.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'tpope/vim-repeat'
 
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'moll/vim-node'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'elixir-editors/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 call vundle#end()
 
