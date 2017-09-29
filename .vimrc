@@ -40,7 +40,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'L9'
 Plugin 'auto-pairs'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'mhinz/vim-signify'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'godlygeek/tabular'
 Plugin 'ecomba/vim-ruby-refactoring'
