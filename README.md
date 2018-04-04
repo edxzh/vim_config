@@ -1,12 +1,24 @@
-## Vimrc
-Vimrc is my vim config file, there are some common and useful plugins in it. It is dedicated for ruby on rails developer.
+## vim_config
+Fast own your own perfect VIM editor for Ruby & Elixir Developer
 
-prior to overwrite your `.vimrc`, Please install [vundle](!https://github.com/VundleVim/Vundle.vim) ahead.
+Prior to overwrite your `.vimrc`, Please install [vundle](https://github.com/VundleVim/Vundle.vim) ahead.
+
+Clone this Repo
+```shell
+$ git clone https://github.com/Dogzhou/vim_config.git & cd vim_config
+```
+
+Overwrite system `.vimrc` file
+```shell
+$ cp .vimrc ~/
+```
+
+Open Vim, install plugins(type `:PluginInstall`, then press return)
 
 ## Solarized.vim
-solarized.vim is a color scheme for Vim. put it in `~/.vim/colors`. if directory not exist, create it mannualy
+`solarized.vim` is a color scheme for Vim. put into in `~/.vim/colors`. if the directory does not exist, please create it mannualy
 
-```
+```shell
 $ mkdir ~/.vim/colors
 $ cp solarized.vim ~/.vim/colors
 ```
@@ -17,7 +29,5 @@ Solarized Dark.xcs is one color schemes for xshell which is a ssh software in wi
 ## Deja Vu Sans Mono.ttf
 Deja Vu Sans Mono.ttf is a windows font, just double click when you are on windows
 
-## Solarized Dark.itermcolors
-Solarized Dark.itermcolors is a preset for Iterm on MacOS, Please double click it then it'll be imported as a preset of Iterm2.
-
+## Change Iterms Color Presets to **Solarized Dark**
 **Preferences -> Profiles -> Colors -> Color Presets -> Solarized Dark/Light**
