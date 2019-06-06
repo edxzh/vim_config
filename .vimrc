@@ -54,7 +54,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/grep.vim'
 
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
-Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-multiple-cursors'
 " snippets plugin rely on this two lib
