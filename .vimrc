@@ -75,6 +75,7 @@ Plugin 'moll/vim-node'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 
