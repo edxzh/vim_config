@@ -43,6 +43,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-scripts/matchit.zip'
@@ -75,7 +76,7 @@ Plugin 'moll/vim-node'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
-Plugin 'hashivim/vim-terraform'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 
