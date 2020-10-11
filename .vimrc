@@ -77,6 +77,7 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'rust-lang/rust.vim'
+Plugin 'ryanoasis/vim-devicons'
 
 call vundle#end()
 
