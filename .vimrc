@@ -50,7 +50,7 @@ Plugin 'vim-scripts/matchit.zip'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'preservim/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/grep.vim'
 
@@ -62,7 +62,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
 " install ctags first
-Plugin 'vim-scripts/taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'elzr/vim-json'
 Plugin 'asins/template.vim'
 Plugin 'AutoComplPop'
@@ -104,6 +104,24 @@ let Powerline_symbols = 'compatible'
 let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
+
+let g:NERDCreateDefaultMappings = 1
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
 " grep.vim settings
 let Grep_Default_Options = '-ir'
