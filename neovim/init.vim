@@ -48,15 +48,22 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-repeat'
 
+Plug 'godlygeek/tabular'
+
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdcommenter'
 
 Plug 'elixir-editors/vim-elixir'
+Plug 'JakeBecker/elixir-ls', { 'do': { -> g:elixirls.compile() } }
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
 " Initialize plugin system
 call plug#end()
+
+autocmd BufRead,BufNewFile *.json setlocal ft=json
+autocmd FileType markdown setlocal shiftwidth=4 expandtab
+autocmd BufNewFile,BufRead *.mk setlocal filetype=markdown
 
 inoremap jk <ESC>
 "Reveal file in NerdTree
@@ -134,7 +141,6 @@ let g:coc_global_extensions = [
   \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-eslint', 
-  \ 'coc-prettier', 
   \ 'coc-json', 
   \ 'coc-pyright',
   \ 'coc-elixir'
@@ -197,6 +203,25 @@ nmap <F2> <Plug>(coc-rename)
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" tabularize plugin, auto align
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:\zs<CR>
+vmap <Leader>a: :Tabularize /:\zs<CR>
 
 augroup mygroup
   autocmd!
