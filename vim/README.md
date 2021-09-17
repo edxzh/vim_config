@@ -12,6 +12,23 @@ Overwrite system `.vimrc` file
 ```
 $ cp vim/.vimrc ~/
 ```
+# Plugins
+
+## Ctags
+
+```
+$ brew install ctags
+```
+
+## fzf
+
+```
+$ brew install bat
+$ brew install fzf
+$ brew install the_silver_searcher
+$ brew install ripgrep
+```
+
 Open Vim, install plugins(type `:PluginInstall`, then press return)
 
 ## Solarized.vim

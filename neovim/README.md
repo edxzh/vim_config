@@ -16,6 +16,23 @@ $ mkdir ~/.config/nvim
 $ cp init.vim ~/.config/nvim
 ```
 
+# Plugins
+
+## Ctags
+
+```
+$ brew install ctags
+```
+
+## fzf
+
+```
+$ brew install bat
+$ brew install fzf
+$ brew install the_silver_searcher
+$ brew install ripgrep
+```
+
 Open neovim, install plugins(type `:PlugInstall`, then press return)
 
 ## Solarized8

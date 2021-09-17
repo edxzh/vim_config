@@ -47,12 +47,14 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'ecomba/vim-ruby-refactoring'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'preservim/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/grep.vim'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 Plugin 'tpope/vim-surround'
@@ -126,14 +128,8 @@ let g:NERDToggleCheckAllLines = 1
 " grep.vim settings
 let Grep_Default_Options = '-ir'
 
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_user_command = {
-  \ 'types': {
-    \ 1: ['.git/', 'cd %s && git ls-files'],
-    \ 2: ['.hg/', 'hg --cwd %s locate -I .'],
-    \ },
-  \ 'fallback': 'find %s -type f'
-\ }
+" ctrl-p calls FZF
+nnoremap <C-p> :GFiles<CR>
 
 map <Leader>d orequire 'byebug'; byebug<esc>
 
