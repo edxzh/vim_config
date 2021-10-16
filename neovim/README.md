@@ -33,6 +33,12 @@ $ brew install the_silver_searcher
 $ brew install ripgrep
 ```
 
+## semshi(python highlight)
+
+```
+$ pip3 install pynvim --upgrade
+```
+
 Open neovim, install plugins(type `:PlugInstall`, then press return)
 
 ## Solarized8

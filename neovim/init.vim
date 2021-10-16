@@ -59,6 +59,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'elixir-editors/vim-elixir'
 Plug 'JakeBecker/elixir-ls', { 'do': { -> g:elixirls.compile() } }
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 
 " Initialize plugin system
 call plug#end()
