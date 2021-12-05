@@ -16,6 +16,7 @@ set isk+=-
 set mouse=nv
 " always uses spaces instead of tab characters
 set expandtab
+set ignorecase
 
 " from readme
 " if hidden is not set, TextEdit might fail.
@@ -120,6 +121,8 @@ nnoremap <C-p> :GFiles<CR>
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+nnoremap <esc> :noh<return><esc>
 
 " sync open file with NERDTree
 " " Check if NERDTree is open or active
