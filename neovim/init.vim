@@ -41,6 +41,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-test/vim-test'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -71,7 +72,6 @@ autocmd BufNewFile,BufRead *.mk setlocal filetype=markdown
 inoremap jk <ESC>
 "Reveal file in NerdTree
 map <Leader>/  <plug>NERDCommenterToggle<cr>
-nmap <C-n> :NERDTreeToggle<CR>
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
@@ -326,3 +326,10 @@ xnoremap <S-Down> :<C-u>silent! '<,'>move'>+<CR>gv=gv
 
 " search and replace
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
