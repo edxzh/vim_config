@@ -37,8 +37,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'L9'
-Plugin 'auto-pairs'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mhinz/vim-signify'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -53,8 +51,7 @@ Plugin 'preservim/nerdcommenter'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-scripts/grep.vim'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plugin 'vim-test/vim-test'
 
 Plugin 'git://github.com/Lokaltog/vim-powerline.git'
 Plugin 'tpope/vim-surround'
@@ -80,6 +77,9 @@ Plugin 'elixir-editors/vim-elixir'
 Plugin 'slashmili/alchemist.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'ryanoasis/vim-devicons'
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call vundle#end()
 
@@ -229,3 +229,16 @@ fun! GetSnipsInCurrentScope()
   endfor
   return snips
 endf
+
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
