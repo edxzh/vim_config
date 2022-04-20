@@ -22,21 +22,15 @@ $ cp init.vim ~/.config/nvim
 
 ```
 $ brew install ctags
-```
-
-## fzf
-
-```
-$ brew install bat
-$ brew install fzf
-$ brew install the_silver_searcher
-$ brew install ripgrep
+$ cp .ctags ~/.ctags
 ```
 
 ## semshi(python highlight)
 
 ```
 $ pip3 install pynvim --upgrade
+$ vi
+:UpdateRemotePlugins
 ```
 
 Open neovim, install plugins(type `:PlugInstall`, then press return)
