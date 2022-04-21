@@ -71,6 +71,10 @@ autocmd BufRead,BufNewFile *.json setlocal ft=json
 autocmd FileType markdown setlocal shiftwidth=4 expandtab
 autocmd BufNewFile,BufRead *.mk setlocal filetype=markdown
 
+au BufRead,BufNewFile *.ex,*.exs set filetype=elixir
+au BufRead,BufNewFile *.eex,*.heex,*.leex,*.sface,*.lexs set filetype=eelixir
+au BufRead,BufNewFile mix.lock set filetype=elixir
+
 inoremap jk <ESC>
 "Reveal file in NerdTree
 map <Leader>/  <plug>NERDCommenterToggle<cr>
@@ -115,9 +119,6 @@ let g:airline_theme='solarized'
 let g:NERDTreeIgnore = ['^node_modules$']
 
 let g:mapleader = ","
-
-" ctrl-p calls FZF
-nnoremap <C-p> :GFiles<CR>
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')

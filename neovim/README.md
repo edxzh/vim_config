@@ -18,6 +18,23 @@ $ cp init.vim ~/.config/nvim
 
 # Plugins
 
+## coc-elixir
+run `:CocInstall coc-elixir` in vim, then
+
+Make sure you've got elixir, mix and yarn available in $PATH
+
+```
+$ asdf install erlang latest
+$ asdf global erlang latest
+$ asdf install elixir latest
+$ asdf global elixir latest
+$ asdf install yarn latest
+$ asdf global yarn latest
+# Download latest elixir-ls release and unzip
+$ curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixir-ls.zip
+$ unzip elixir-ls.zip -d ~/.vim/plugged/coc-elixir/els-release
+```
+
 ## Ctags
 
 ```
@@ -45,3 +62,7 @@ $ cp -f colors/ ~/.config/nvim
 1.neovim doesn't recognize `^M` in the configuration file
 
 Answer: check you git config, make sure `core.autocrlf=input`, delete `~/.vim/plugged` folder and re-run `:PlugInstall`
+
+2. Error message "error:0308010C:digital envelope routines::unsupported"
+
+https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported

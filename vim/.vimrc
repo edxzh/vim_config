@@ -125,12 +125,6 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-" grep.vim settings
-let Grep_Default_Options = '-ir'
-
-" ctrl-p calls FZF
-nnoremap <C-p> :GFiles<CR>
-
 map <Leader>d orequire 'byebug'; byebug<esc>
 
 map <Leader>N :NERDTreeToggle<cr>
