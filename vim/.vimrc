@@ -81,6 +81,9 @@ Plugin 'ryanoasis/vim-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 call vundle#end()
 
 filetype on                   " required!
@@ -139,6 +142,9 @@ map <Leader>j :%!python -m json.tool<cr>
 map <leader>t :TlistToggle<cr>
 "Build ctags (requires exuberant-ctags)
 map <leader>T :!ctags -R .<cr>
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsEditSplit="vertical"
 
 " Copy the file path to buffer
 map <silent> <Leader>c :let @+ = expand("%")<cr>

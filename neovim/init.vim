@@ -64,6 +64,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 " Initialize plugin system
 call plug#end()
 
@@ -119,6 +122,11 @@ let g:airline_theme='solarized'
 let g:NERDTreeIgnore = ['^node_modules$']
 
 let g:mapleader = ","
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+map <Leader>d o\|> IO.inspect()<esc>
 
 " j/k will move virtual lines (lines that wrap)
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
