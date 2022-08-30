@@ -24,8 +24,8 @@ Deja Vu Sans Mono.ttf is a windows font, just double click when you are on windo
 
 ## vim-devicons
 ```
-$ brew tap homebrew/cask-fonts
-$ brew cask install font-hack-nerd-font
+brew tap homebrew/cask-fonts
+brew install font-hack-nerd-font --cask
 ```
 
 Open Iterm2, Preferences => Profiles => Text => Non-ASCII Font => Hack Nerd Font

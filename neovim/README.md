@@ -12,8 +12,12 @@ Get [vim-plug](https://github.com/junegunn/vim-plug) installed
 Move `init.vim` into your system folder
 
 ```
-$ mkdir ~/.config/nvim
-$ cp init.vim ~/.config/nvim
+mkdir ~/.config/nvim
+cp init.vim ~/.config/nvim
+git clone https://github.com/lifepillar/vim-solarized8.git
+mkdir ~/.config/nvim/colors
+cp vim-solarized8/colors/*.vim ~/.config/nvim/colors
+cp colors/*.vim 
 ```
 
 # Plugins
@@ -24,29 +28,29 @@ run `:CocInstall coc-elixir` in vim, then
 Make sure you've got elixir, mix and yarn available in $PATH
 
 ```
-$ asdf install erlang latest
-$ asdf global erlang latest
-$ asdf install elixir latest
-$ asdf global elixir latest
-$ asdf install yarn latest
-$ asdf global yarn latest
-# Download latest elixir-ls release and unzip
-$ curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixir-ls.zip
-$ unzip elixir-ls.zip -d ~/.vim/plugged/coc-elixir/els-release
+asdf install erlang latest
+asdf global erlang latest
+asdf install elixir latest
+asdf global elixir latest
+asdf install yarn latest
+asdf global yarn latest
+Download latest elixir-ls release and unzip
+curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixir-ls.zip
+unzip elixir-ls.zip -d ~/.vim/plugged/coc-elixir/els-release
 ```
 
 ## Ctags
 
 ```
-$ brew install ctags
-$ cp .ctags ~/.ctags
+brew install ctags
+cp .ctags ~/.ctags
 ```
 
 ## semshi(python highlight)
 
 ```
-$ pip3 install pynvim --upgrade
-$ vi
+pip3 install pynvim --upgrade
+vi
 :UpdateRemotePlugins
 ```
 
@@ -55,7 +59,7 @@ Open neovim, install plugins(type `:PlugInstall`, then press return)
 ## Solarized8
 `solarized8` is a color scheme. copy the whole `colors` folder into in `~/.config/nvim/`
 ```
-$ cp -f colors/ ~/.config/nvim
+cp -f colors/ ~/.config/nvim
 ```
 
 ## troubleshoot

@@ -5,28 +5,29 @@ Prior to overwrite your `.vimrc`, Please install [vundle](https://github.com/Vun
 
 Clone this Repo
 ```
-$ git clone https://github.com/Dogzhou/vim_config.git & cd vim_config
+git clone https://github.com/Dogzhou/vim_config.git
+cd vim_config
 ```
 
 Overwrite system `.vimrc` file
 ```
-$ cp vim/.vimrc ~/
+cp vim/.vimrc ~/
 ```
 # Plugins
 
 ## Ctags
 
 ```
-$ brew install ctags
+brew install ctags
 ```
 
 ## fzf
 
 ```
-$ brew install bat
-$ brew install fzf
-$ brew install the_silver_searcher
-$ brew install ripgrep
+brew install bat
+brew install fzf
+brew install the_silver_searcher
+brew install ripgrep
 ```
 
 Open Vim, install plugins(type `:PluginInstall`, then press return)
@@ -35,6 +36,6 @@ Open Vim, install plugins(type `:PluginInstall`, then press return)
 `solarized.vim` is a color scheme for Vim. put into in `~/.vim/colors`. if the directory does not exist, please create it mannualy
 
 ```
-$ mkdir ~/.vim/colors
-$ cp vim/solarized.vim ~/.vim/colors
+mkdir ~/.vim/colors
+cp vim/solarized.vim ~/.vim/colors
 ```
