@@ -238,10 +238,11 @@ nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>ff <cmd>Telescope find_files prompt_prefix=🔍<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep prompt_prefix=🔍<cr>
+nnoremap <leader>fb <cmd>Telescope buffers prompt_prefix=🔍<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags prompt_prefix=🔍<cr>
+
 
 let g:tagbar_type_elixir = {
     \ 'ctagstype' : 'elixir',

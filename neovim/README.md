@@ -20,6 +20,13 @@ cp vim-solarized8/colors/*.vim ~/.config/nvim/colors
 cp colors/*.vim 
 ```
 
+## riggrep
+
+```
+brew install bat
+brew install ripgrep
+```
+
 # Plugins
 
 ## coc-elixir
