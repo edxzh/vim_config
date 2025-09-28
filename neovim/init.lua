@@ -68,10 +68,6 @@ require("lazy").setup({
   "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim",
   
-  -- Snippets
-  "SirVer/ultisnips",
-  "honza/vim-snippets",
-
   "preservim/vim-markdown"
 })
 
@@ -108,6 +104,17 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 
 -- Key mappings
 vim.keymap.set("i", "jk", "<ESC>")
+
+-- macOS Command key mappings for clipboard
+vim.keymap.set("i", "<D-v>", "<C-r>+", { silent = true })
+vim.keymap.set("n", "<D-v>", "+p", { silent = true })
+vim.keymap.set("v", "<D-v>", "+p", { silent = true })
+vim.keymap.set("i", "<D-c>", "<C-o>\"+y", { silent = true })
+vim.keymap.set("n", "<D-c>", "\"+y", { silent = true })
+vim.keymap.set("v", "<D-c>", "\"+y", { silent = true })
+vim.keymap.set("i", "<D-x>", "<C-o>\"+d", { silent = true })
+vim.keymap.set("n", "<D-x>", "\"+d", { silent = true })
+vim.keymap.set("v", "<D-x>", "\"+d", { silent = true })
 
 -- NERDTree mappings
 vim.keymap.set("n", "<Leader>/", "<plug>NERDCommenterToggle<cr>")
@@ -148,10 +155,6 @@ vim.g.NERDTreeIgnore = { "^node_modules$" }
 
 -- Leader key
 vim.g.mapleader = ","
-
--- UltiSnips configuration
-vim.g.UltiSnipsExpandTrigger = "<tab>"
-vim.g.UltiSnipsEditSplit = "vertical"
 
 -- Custom mappings
 vim.keymap.set("n", "<Leader>d", "o|> IO.inspect()<esc>")
