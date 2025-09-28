@@ -1,6 +1,5 @@
 -- Basic settings
 vim.opt.syntax = "on"
-vim.opt.filetype = { plugin = true, indent = true }
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamed"
 vim.opt.background = "dark"
@@ -20,14 +19,9 @@ vim.opt.ignorecase = true
 
 -- Additional settings from readme
 vim.opt.hidden = true
-vim.opt.nobackup = true
-vim.opt.nowritebackup = true
 vim.opt.cmdheight = 2
 vim.opt.updatetime = 300
 vim.opt.shortmess:append("c")
-
--- Colorscheme
-vim.cmd("colorscheme solarized8")
 
 -- Plugin management with lazy.nvim (modern replacement for vim-plug)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -77,6 +71,8 @@ require("lazy").setup({
   -- Snippets
   "SirVer/ultisnips",
   "honza/vim-snippets",
+
+  "preservim/vim-markdown"
 })
 
 -- File type autocmds
@@ -142,6 +138,8 @@ vim.g.NERDCommentEmptyLines = 1
 vim.g.NERDTrimTrailingWhitespace = 1
 vim.g.NERDToggleCheckAllLines = 1
 
+vim.g.vim_markdown_folding_disabled = 1
+
 -- Airline configuration
 vim.g.airline_theme = "solarized"
 
@@ -204,32 +202,11 @@ vim.keymap.set("i", "<cr>", function()
 end, { expr = true })
 
 
--- Tabularize auto-align
-vim.keymap.set("i", "<Bar>", "<Bar><Esc>:lua align()<CR>a", { silent = true })
-
-function align()
-  local p = "^%s*|%s.*%s|%s*$"
-  if vim.fn.exists(":Tabularize") == 2 and vim.fn.getline("."):match("^%s*|") and 
-     (vim.fn.getline(vim.fn.line(".") - 1):match(p) or vim.fn.getline(vim.fn.line(".") + 1):match(p)) then
-    local column = vim.fn.strlen(vim.fn.substitute(vim.fn.getline("."):sub(0, vim.fn.col(".")), "[^|]", "", "g"))
-    local position = vim.fn.strlen(vim.fn.matchstr(vim.fn.getline("."):sub(0, vim.fn.col(".")), ".*|%s*%zs.*"))
-    vim.cmd("Tabularize/|/l1")
-    vim.cmd("normal! 0")
-    vim.fn.search(vim.fn.repeat("[^|]*|", column) .. "%s*" .. vim.fn.repeat(".", position), "ce", vim.fn.line("."))
-  end
-end
-
 -- Tabularize mappings
 vim.keymap.set("n", "<Leader>a=", ":Tabularize /=<CR>")
 vim.keymap.set("v", "<Leader>a=", ":Tabularize /=<CR>")
 vim.keymap.set("n", "<Leader>a:", ":Tabularize /:%zs<CR>")
 vim.keymap.set("v", "<Leader>a:", ":Tabularize /:%zs<CR>")
-
--- Tagbar
-vim.keymap.set("n", "<leader>t", ":TagbarToggle<CR>")
-
--- Ctags
-vim.keymap.set("n", "<leader>T", ":!ctags -R .<cr>")
 
 -- Copy file path
 vim.keymap.set("n", "<Leader>c", function()
@@ -271,44 +248,8 @@ vim.keymap.set("x", "<S-Down>", ":<C-u>silent! '<,'>move'>+<CR>gv=gv")
 -- Search and replace
 vim.keymap.set("n", "<Leader>s", ":%s/\\<<C-r><C-w>\\>//gc<Left><Left><Left>")
 
--- Test mappings
-vim.keymap.set("n", "t<C-n>", ":TestNearest<CR>", { silent = true })
-vim.keymap.set("n", "t<C-f>", ":TestFile<CR>", { silent = true })
-vim.keymap.set("n", "t<C-s>", ":TestSuite<CR>", { silent = true })
-vim.keymap.set("n", "t<C-l>", ":TestLast<CR>", { silent = true })
-vim.keymap.set("n", "t<C-g>", ":TestVisit<CR>", { silent = true })
-
 -- Telescope mappings
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files prompt_prefix=🔍<cr>")
 vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep prompt_prefix=🔍<cr>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers prompt_prefix=🔍<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags prompt_prefix=🔍<cr>")
-
--- Tagbar Elixir configuration
-vim.g.tagbar_type_elixir = {
-  ctagstype = "elixir",
-  kinds = {
-    "p:protocols",
-    "m:modules", 
-    "e:exceptions",
-    "y:types",
-    "d:delegates",
-    "f:functions",
-    "c:callbacks",
-    "a:macros",
-    "t:tests",
-    "i:implementations",
-    "o:operators",
-    "r:records"
-  },
-  sro = ".",
-  kind2scope = {
-    p = "protocol",
-    m = "module"
-  },
-  scope2kind = {
-    protocol = "p",
-    module = "m"
-  },
-  sort = 0
-}
